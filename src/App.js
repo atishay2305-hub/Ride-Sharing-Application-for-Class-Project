@@ -6,7 +6,6 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Chat from "./components/chat/Chat";
 import Home from "./components/home/Home";
 import Loading from "./components/common/Loading";
 import Login from "./components/login/Login";
@@ -21,7 +20,6 @@ import "./index.css";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [cometChat, setCometChat] = useState(null);
   const [selectedFrom, setSelectedFrom] = useState(null);
   const [selectedTo, setSelectedTo] = useState(null);
   const [rideRequest, setRideRequest] = useState(null);
@@ -36,8 +34,6 @@ function App() {
   const context = {
     user,
     setUser,
-    cometChat,
-    setCometChat,
     selectedFrom,
     setSelectedFrom,
     selectedTo,
@@ -53,22 +49,6 @@ function App() {
     if (authenticatedUser) {
       setUser(JSON.parse(authenticatedUser));
     }
-  };
-
-  const initCometChat = async () => {
-    const { CometChat } = await import("@cometchat-pro/chat");
-    const appID = `${process.env.REACT_APP_COMETCHAT_APP_ID}`;
-    const region = `${process.env.REACT_APP_COMETCHAT_REGION}`;
-    const appSetting = new CometChat.AppSettingsBuilder()
-      .subscribePresenceForAllUsers()
-      .setRegion(region)
-      .build();
-    CometChat.init(appID, appSetting).then(
-      () => {
-        setCometChat(() => CometChat);
-      },
-      (error) => {}
-    );
   };
 
   const initCurrentRide = () => {
