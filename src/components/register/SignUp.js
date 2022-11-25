@@ -20,7 +20,6 @@ const SignUp = ({ toggleModal }) => {
   const phoneRef = useRef(null);
   const roleRef = useRef(null);
 
-  const { cometChat } = useContext(Context);
 
   const signup = async () => {
     try {
@@ -67,7 +66,6 @@ const SignUp = ({ toggleModal }) => {
       payload: entity,
     });
     await cometChatService.createAccount({
-      cometChat,
       id: entity.id,
       fullname: entity.fullname,
       avatar: url,
@@ -132,7 +130,7 @@ const SignUp = ({ toggleModal }) => {
       return false;
     }
     if (validator.isEmpty(about)) {
-      uiService.alert("Please input your description");
+      uiService.alert("Please add in your description");
       return false;
     }
     return true;
