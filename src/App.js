@@ -63,7 +63,6 @@ function App() {
 
   useEffect(() => {
     initAuthUser();
-    initCometChat();
     initCurrentRide();
   }, []);
 
@@ -135,7 +134,6 @@ function App() {
       <Router>
         <Switch>
           <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute exact path="/chat" component={Chat} />
           <Route exact path="/login">
             <Login />
           </Route>
