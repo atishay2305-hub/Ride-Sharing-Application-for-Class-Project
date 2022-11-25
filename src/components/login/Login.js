@@ -7,7 +7,6 @@ import SignUp from "../register/SignUp";
 
 import Context from "../../context";
 
-import * as cometChatService from "../../services/cometchat";
 import * as firebaseService from "../../services/firebase";
 import * as uiService from "../../services/ui";
 
@@ -39,7 +38,6 @@ const Login = ({ toggleModal }) => {
           query: "email",
           criteria: email,
         });
-        await cometChatService.login(cometChat, user);
         saveAuthedInfo(user);
         uiService.hideLoading();
         history.push("/");
