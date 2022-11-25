@@ -16,7 +16,6 @@ export const incomingCallWrapperStyle = (props, keyframes) => {
 
         if (props.widgetsettings.hasOwnProperty("dockedview") && props.widgetsettings.dockedview) {
 
-            //if chat window is open
             if (props.widgetsettings.hasOwnProperty("launched") && props.widgetsettings.launched) {
 
                 zIndexValue = "2147483000";

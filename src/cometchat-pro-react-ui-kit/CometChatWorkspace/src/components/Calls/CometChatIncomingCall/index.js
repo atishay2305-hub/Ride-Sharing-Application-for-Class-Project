@@ -98,13 +98,13 @@ class CometChatIncomingCall extends React.PureComponent {
 
 	callScreenUpdated = (key, call) => {
 		switch (key) {
-			case enums.INCOMING_CALL_RECEIVED: //occurs at the callee end
+			case enums.INCOMING_CALL_RECEIVED: 
 				this.incomingCallReceived(call);
 				break;
-			case enums.INCOMING_CALL_CANCELLED: //occurs(call dismissed) at the callee end, caller cancels the call
+			case enums.INCOMING_CALL_CANCELLED:
 				this.incomingCallCancelled(call);
 				break;
-			case enums.OUTGOING_CALL_ACCEPTED: //occurs(call dismissed) at the callee end, caller cancels the call
+			case enums.OUTGOING_CALL_ACCEPTED: 
 				this.outgoingCallAccepted(call);
 				break;
 			default:
@@ -125,7 +125,7 @@ class CometChatIncomingCall extends React.PureComponent {
 
 	incomingCallCancelled = call => {
 		if (this._isMounted) {
-			//we are not marking this as read as it will done in messagelist component
+			
 			SoundManager.pause(enums.CONSTANTS.AUDIO["INCOMING_CALL"], this.context);
 			this.setState({ incomingCall: null });
 		}
@@ -135,7 +135,7 @@ class CometChatIncomingCall extends React.PureComponent {
 
 		if(call.sender?.uid === this.loggedInUser?.uid) {
 			if (this._isMounted) {
-				//we are not marking this as read as it will done in messagelist component
+				
 				SoundManager.pause(enums.CONSTANTS.AUDIO["INCOMING_CALL"], this.context);
 				this.setState({ incomingCall: null });
 			}

@@ -70,10 +70,10 @@ class CometChatOutgoingCall extends React.PureComponent {
 
 		switch (key) {
 
-			case enums.OUTGOING_CALL_ACCEPTED://occurs at the caller end
+			case enums.OUTGOING_CALL_ACCEPTED:
 				this.outgoingCallAccepted(call);
 			break;
-			case enums.OUTGOING_CALL_REJECTED://occurs at the caller end, callee rejects the call
+			case enums.OUTGOING_CALL_REJECTED:
 				this.outgoingCallRejected(call);
 			break;
 			default:
@@ -137,11 +137,11 @@ class CometChatOutgoingCall extends React.PureComponent {
 		}
 	}
 
-	//cancelling an outgoing call
+	
 	cancelCall = () => {
 
 		SoundManager.pause(enums.CONSTANTS.AUDIO["OUTGOING_CALL"], this.context);
-		//if user busy error, just close the callscreen, no need to reject the call
+		
 		if (this.state.errorScreen) {
 
 			this.setState({ errorScreen: false, errorMessage: null, outgoingCallScreen: false, callInProgress: null });
@@ -211,7 +211,7 @@ class CometChatOutgoingCall extends React.PureComponent {
 	}
 }
 
-// Specifies the default values for props:
+
 CometChatOutgoingCall.defaultProps = {
 	lang: Translator.getDefaultLanguage(),
 	theme: theme,

@@ -38,7 +38,7 @@ class CometChatCallScreen extends React.PureComponent {
         this.state = {
             x: 0,
             y: 0,
-            rel: null, // position relative to the cursor
+            rel: null, 
             dragging: false,
             maximized: true
         };

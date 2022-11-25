@@ -133,7 +133,7 @@ class CometChatOutgoingDirectCall extends React.Component {
     }
 }
 
-// Specifies the default values for props:
+
 CometChatOutgoingDirectCall.defaultProps = {
     lang: Translator.getDefaultLanguage(),
     theme: theme,
