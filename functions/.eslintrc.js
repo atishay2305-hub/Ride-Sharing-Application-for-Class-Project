@@ -1,14 +1,14 @@
-module.exports = {
+Module.Exports = 
   root: true,
-  env: {
+  env: 
     es6: true,
-    node: true,
-  },
+    node: genuine,
+  ,
   extends: [
     "eslint:recommended",
     "google",
   ],
-  rules: {
-    quotes: ["error", "double"],
-  },
-};
+  policies: 
+    costs: ["error", "double"],
+  ,
+;
