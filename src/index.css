@@ -1,11 +1,9 @@
 body 
 {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Ubuntu",sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code 
@@ -13,7 +11,6 @@ code
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 * 
 {
   padding: 0;
@@ -36,20 +33,20 @@ input
 {
   background-color: #f0f2f5;
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 56% 46%;
   height: 100vh;
   width: 100vw;
 }
 
 .login__logo 
 {
-  width: 10.25rem;
-  padding-left: 2.125rem;
+  width: 10.30rem;
+  padding-left: 2.2rem;
 }
 
 .login__logo img 
 {
-  width: 10.25rem !important;
+  width: 10.25rem;
 }
 
 .login__welcome {
@@ -79,17 +76,17 @@ input
 .login__form 
 {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  padding: 1.25rem;
-  width: 24.75rem;
+  box-shadow: 0 2.5px 4.2px rgb(0 0 0), 0 9px 15px rgb(0 0 0);
+  padding: 1.27rem;
+  width: 25rem;
 }
 
 .login__form input 
 {
   border: 1px solid #e5e7eb;
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-  padding: 0.875rem 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.80rem;
+  padding: 0.9rem 1.5rem;
   width: 100%;
 }
 
@@ -97,11 +94,11 @@ input
 {
   background-color: #000000;
   border: 0;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 650;
   outline: none;
-  padding: 0.875rem 1rem;
+  padding: 0.9rem 1.2rem;
   width: 100%;
 }
 
@@ -114,7 +111,7 @@ input
 .login__forgot-password 
 {
   border-bottom: 1px solid #e5e7eb;
-  color: #000000;
+  color: black;
   display: block;
   font-size: 0.9375rem;
   padding: 1.25rem 0;
@@ -250,27 +247,22 @@ input
     transform: rotate(360deg);
   }
 }
-
-/* The Modal (background) */
 .signup {
   background-color: rgba(255, 255, 255, 0.8);
-  display: block; /* Hidden by default */
-  height: 100%; /* Full height */
+  display: block;
+  height: 100%; 
   left: 0;
-  /* overflow: auto; */
-  position: fixed; /* Stay in place */
+  position: fixed; 
   top: 0;
-  width: 100%; /* Full width */
-  z-index: 1; /* Sit on top */
+  width: 100%;
+  z-index: 1;
 }
 
-/* Modal Content/Box */
 .signup__content {
   background-color: #fefefe;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  margin: 0% auto; /* 15% from the top and centered */
-  /* margin-top: 10%; */
-  width: 27rem; /* Could be more or less, depending on screen size */
+  margin: 0% auto; 
+  width: 27rem; 
 }
 
 .signup__container {
@@ -592,26 +584,23 @@ input
   width: 0.75rem;
 }
 
-/* The Modal (background) */
 .request-ride {
   background-color: rgba(255, 255, 255, 0.8);
-  display: block; /* Hidden by default */
-  height: 100%; /* Full height */
+  display: block;
+  height: 100%; 
   left: 0;
-  /* overflow: auto; */
-  position: fixed; /* Stay in place */
+  position: fixed;
   top: 0;
-  width: 100%; /* Full width */
-  z-index: 1000; /* Sit on top */
+  width: 100%;
+  z-index: 1000;
 }
 
-/* Modal Content/Box */
 .request-ride__content {
   background-color: #fefefe;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
   margin-top: 13%;
-  width: 27rem; /* Could be more or less, depending on screen size */
+  width: 27rem;
 }
 
 .request-ride__container {
