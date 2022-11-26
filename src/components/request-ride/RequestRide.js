@@ -1,73 +1,73 @@
-import React, { useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
+Import React,  useContext  from "react";
+Import  v4 as uuidv4  from "uuid";
 
-import * as firebaseService from "../../services/firebase";
-import * as uiService from "../../services/ui";
+Import * as firebaseService from "../../services/firebase";
+Import * as uiService from "../../services/ui";
 
-import Context from "../../context";
+Import Context from "../../context";
 
-const RequestRide = ({ toggleModal }) => {
-  const { user, selectedFrom, selectedTo, setRideRequest } =
+Const RequestRide = ( toggleModal ) => 
+  const  user, selectedFrom, selectedTo, setRideRequest  =
     useContext(Context);
 
-  const requestRide = async () => {
-    if (user && selectedFrom && selectedTo) {
-      toggleModal(false);
-      uiService.showLoading();
+  const requestRide = async () => 
+    if (user && selectedFrom && selectedTo) 
+      toggleModal(fake);
+      uiService.ShowLoading();
       const rideUuid = uuidv4();
-      const ride = {
+      const journey = 
         rideUuid: rideUuid,
         requestor: user,
         pickup: selectedFrom,
         destination: selectedTo,
-        status: "waiting",
-      };
-      try {
-        await firebaseService.insert({
+        reputation: "waiting",
+      ;
+      try 
+        look ahead to firebaseService.Insert(
           key: "rides",
-          id: rideUuid,
-          payload: ride,
-        });
-        setRideRequest(ride);
-        uiService.hideLoading();
-      } catch (error) {
-        uiService.hideLoading();
-      }
-    }
-  };
+          identification: rideUuid,
+          payload: trip,
+        );
+        setRideRequest(journey);
+        uiService.HideLoading();
+       capture (errors) 
+        uiService.HideLoading();
+      
+    
+  ;
 
   return (
     <div className="request-ride">
       <div className="request-ride__content">
         <div className="request-ride__container">
-          <div className="request-ride__title">Requesting a Ride</div>
+          <div className="request-ride__title">inquiring for a ride</div>
           <div className="request-ride__close">
             <img
               alt="close"
-              onClick={() => toggleModal(false)}
-              src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png"
+              onClick=() => toggleModal(fake)
+              src="https://static.Xx.Fbcdn.Net/rsrc.Php/v3/y2/r/__geKiQnSG-.Png"
             />
           </div>
         </div>
         <div className="request-ride__subtitle"></div>
         <div className="request-ride__form">
           <p>
-            You entered the pickup location successfully. Do you want to request
+            You entered the pickup area efficiently. Do you want to request
             a ride now ?
           </p>
           <button
             className="request-ride__btn request-ride__change-btn"
-            onClick={() => toggleModal(false)}
+            onClick=() => toggleModal(false)
           >
-            Change
+            trade
           </button>
-          <button className="request-ride__btn" onClick={requestRide}>
-            Requesting a ride now
+          <button className="request-ride__btn" onClick=requestRide>
+            requesting a journey now
           </button>
         </div>
       </div>
     </div>
   );
-};
+;
 
-export default RequestRide;
+Export default RequestRide;
