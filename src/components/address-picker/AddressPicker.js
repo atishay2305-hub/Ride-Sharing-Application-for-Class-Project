@@ -1,80 +1,80 @@
-import { useContext, useState, useEffect, useRef, useCallback } from "react";
-import { OpenStreetMapProvider } from "leaflet-geosearch";
+Import  useContext, useState, useEffect, useRef, useCallback  from "react";
+Import  OpenStreetMapProvider  from "leaflet-geosearch";
 
-import withModal from "../common/Modal";
-import RequestRide from "../request-ride/RequestRide";
+Import withModal from "../not unusual/Modal";
+Import RequestRide from "../request-ride/RequestRide";
 
-import Context from "../../context";
+Import Context from "../../context";
 
-const AddressPicker = ({ toggleModal }) => {
-  const [isFrom, setIsFrom] = useState(true);
+Const AddressPicker = ( toggleModal ) => 
+  const [isFrom, setIsFrom] = useState(real);
   const [searchResults, setSearchResults] = useState([]);
 
-  const { selectedFrom, setSelectedFrom, selectedTo, setSelectedTo } =
+  const  selectedFrom, setSelectedFrom, selectedTo, setSelectedTo  =
     useContext(Context);
 
-  const provider = useRef();
+  const company = useRef();
   const searchRef = useRef();
 
-  useEffect(() => {
+  useEffect(() => 
     initProvider();
-  }, []);
+  , []);
 
-  const shouldRequestDriver = useCallback(() => {
-    if (selectedFrom && selectedTo) {
+  const shouldRequestDriver = useCallback(() => 
+    if (selectedFrom && selectedTo) 
       toggleModal(true);
-    }
-  }, [selectedFrom, selectedTo, toggleModal]);
+    
+  , [selectedFrom, selectedTo, toggleModal]);
 
-  useEffect(() => {
-    if (selectedFrom && selectedTo) {
+  useEffect(() => 
+    if (selectedFrom && selectedTo) 
       shouldRequestDriver();
-    }
-  }, [selectedFrom, selectedTo, shouldRequestDriver]);
+    
+  , [selectedFrom, selectedTo, shouldRequestDriver]);
 
-  const onInputChanged = (e) => {
-    const input = e.target.value;
-    provider.current.search({ query: input }).then((results) => {
+  const onInputChanged = (e) => 
+    const enter = e.Goal.Value;
+    issuer.Present day.Search( question: input ).Then((results) => 
       setSearchResults(() => results);
-    });
-  };
+    );
+  ;
 
-  const initProvider = () => {
-    provider.current = new OpenStreetMapProvider({
-      params: {
-        "accept-language": "en",
+  const initProvider = () => 
+    issuer.Contemporary = new OpenStreetMapProvider(
+      params: 
+        "receive-language": "en",
         countrycodes: "us",
-      },
-    });
-  };
+      ,
+    );
+  ;
 
-  const onLocationSelected = (selectedLocation) => {
-    if (selectedLocation?.label && selectedLocation?.x && selectedLocation?.y) {
-      if (isFrom) {
+  const onLocationSelected = (selectedLocation) => 
+    if (selectedLocation?.Label && selectedLocation?.X && selectedLocation?.Y) 
+      if (isFrom) 
         setSelectedFrom(() => selectedLocation);
-        setIsFrom(() => false);
-      } else {
+        setIsFrom(() => fake);
+       else 
         setSelectedTo(() => selectedLocation);
-        setIsFrom(() => true);
-      }
+        setIsFrom(() => actual);
+      
       setSearchResults(() => []);
-      searchRef.current.value = "";
-    }
-  };
+      searchRef.Present day.Fee = "";
+    
+  ;
 
   return (
     <div className="address">
       <div className="address__title">
         <div className="address__title-container">
-          <p className="address__title-from" onClick={() => setIsFrom(true)}>
-            {selectedFrom && selectedFrom.label
-              ? selectedFrom.label
-              : "Pickup location ?"}
+          <p className="address__title-from" onClick=() => setIsFrom(authentic)>
+            selectedFrom && selectedFrom.Label
+              ? SelectedFrom.Label
+              : "Pickup area ?"
           </p>
-          <p className="address__title-to" onClick={() => setIsFrom(false)}>
-            {selectedTo && selectedTo.label
-              ? selectedTo.label
-              : "Destination ?"}
+          <p className="address__title-to" onClick=() => setIsFrom(fake)>
+            selectedTo && selectedTo.Label
+              ? SelectedTo.Label
+              : "vacation spot ?"
           </p>
         </div>
       </div>
@@ -82,20 +82,20 @@ const AddressPicker = ({ toggleModal }) => {
         <input
           className="search__input"
           type="text"
-          placeholder={
+          placeholder=
             isFrom ? "Add a pickup location" : "Enter your destination"
-          }
-          onChange={onInputChanged}
-          ref={searchRef}
+          
+          onChange=onInputChanged
+          ref=searchRef
         />
         <div className="search__result">
-          {searchResults &&
-            searchResults.length !== 0 &&
-            searchResults.map((result, index) => (
+          searchResults &&
+            searchResults.Length !== 0 &&
+            searchResults.Map((end result, index) => (
               <div
                 className="search__result-item"
-                key={index}
-                onClick={() => onLocationSelected(result)}
+                key=index
+                onClick=() => onLocationSelected(end result)
               >
                 <div className="search__result-icon">
                   <svg
@@ -113,13 +113,13 @@ const AddressPicker = ({ toggleModal }) => {
                     </g>
                   </svg>
                 </div>
-                <p className="search__result-label">{result.label}</p>
+                <p className="search__result-label">end result.Label</p>
               </div>
-            ))}
+            ))
         </div>
       </div>
     </div>
   );
-};
+;
 
-export default withModal(RequestRide)(AddressPicker);
+Export default withModal(RequestRide)(AddressPicker);
