@@ -6,7 +6,6 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Chat from "./components/chat/Chat";
 import Home from "./components/home/Home";
 import Loading from "./components/common/Loading";
 import Login from "./components/login/Login";
@@ -128,7 +127,7 @@ function App() {
       if (
         updatedRide?.rideUuid === currentRide.rideUuid &&
         updatedRide?.driver &&
-        (updatedRide?.status === "canceled" || updatedRide?.status === "done")
+        (updatedRide?.status === "cancelled" || updatedRide?.status === "done")
       ) {
         localStorage.removeItem("currentRide");
         setCurrentRide(null);
